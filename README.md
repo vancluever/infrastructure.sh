@@ -58,6 +58,8 @@ In your CI system (ie: Travis), set up your build rules to run your Terraform
 operations off of tags that start with `infrastructure`. Example for Travis can
 be found in [this project][4].
 
+[4]: https://github.com/vancluever/ubc_demo
+
 The tag is designed to be verbose enough that it's easy to pick out in your CI
 system.
 
