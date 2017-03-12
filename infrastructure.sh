@@ -67,7 +67,7 @@ EOS
 
 message begin "==> Fetching Notes and Computing Build Number <=="
 git fetch origin refs/notes/*:refs/notes/*
-last_note=$(git show --format= --name-only refs/notes/infrastructure_build_number)
+last_note=$(git show --format= --name-only refs/notes/infrastructure_build_number 2>/dev/null)
 last_build_number=$(git notes --ref=infrastructure_build_number show "${last_note}" 2>/dev/null || echo "0")
 if ! [ "${last_build_number}" -eq "${last_build_number}" ] 2>/dev/null; then
   message error "Build number note in infrastructure_build_number is not a number. Please check"
